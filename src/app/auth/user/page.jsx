@@ -48,7 +48,7 @@ const handleEdit = (user, index) => {
 };
 
  const handleSave = async () => {
-  if (!form.name || !form.email || !form.password) {
+  if (!form.name || !form.email) {
     alert("Please fill all fields");
     return;
   }

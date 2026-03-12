@@ -34,7 +34,7 @@
     "**/*.mts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "src/app/cupboard/page.jsx"  ],
   "exclude": [
     "node_modules"
   ]
