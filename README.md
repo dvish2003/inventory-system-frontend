@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Inventory Management System (Frontend)
 
-## Getting Started
+This is the frontend for a simple inventory management system built with Next.js. It helps track items, manage borrowings, and organize inventory based on physical locations and cupboards.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+*   **Inventory Tracking**: Full CRUD for items, including item codes, quantities, and descriptions.
+*   **Borrowing Management**: Keep track of who borrowed what, contact details, and expected return dates.
+*   **Location Mapping**: Assign items to specific 'Places' or 'Cupboards' for easier physical searching.
+*   **Status Indicators**: Track if items are 'In-Store', 'Borrowed', 'Damaged', or 'Missing'.
+*   **Toast Notifications**: Real-time feedback for all actions using `react-hot-toast`.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Setup & Local Development
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+1.  **Clone the repo**
+2.  **Install dependencies**:
+    ```bash
+    npm install
+    ```
+3.  **Configure Environment Variables**:
+    Create a `.env` file in the root (or copy from `.env.example` if available) and set your API base URL:
+    ```env
+    NEXT_PUBLIC_API_BASE_URL=http://127.0.0.1:8000/api
+    ```
+4.  **Run the development server**:
+    ```bash
+    npm run dev
+    ```
+5.  **Build for production**:
+    ```bash
+    npm run build
+    npm start
+    ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Tech Stack
 
-## Learn More
+*   **Framework**: Next.js 15 (App Router)
+*   **Styling**: Tailwind CSS
+*   **State/Logic**: React (Hooks)
+*   **API Interaction**: Custom `apiClient` wrapper
+*   **Notifications**: React Hot Toast
 
-To learn more about Next.js, take a look at the following resources:
+## Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Inside `src/app`, you'll find:
+*   `/auth`: Login and user management.
+*   `/inventory`: Main item management page.
+*   `/borrowing`: Tracking borrowed items and return statuses.
+*   `/place` & `/cupboard`: Physical location management.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
